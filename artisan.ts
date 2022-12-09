@@ -11,7 +11,8 @@ try {
     commands.command(
         'swagger:request <name>',
         'Create a swagger request definition file',
-        undefined,
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        () => {},
         (argv: Arguments) => {
             const template = new SwaggerRequestTemplate(<string>argv.name);
             template.generate();
@@ -23,7 +24,8 @@ try {
     commands.command(
         'swagger:response <name>',
         'Create a swagger response definition file',
-        undefined,
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        () => {},
         (argv: Arguments) => {
             const template = new SwaggerResponseTemplate(<string>argv.name);
             template.generate();
@@ -32,12 +34,18 @@ try {
         },
     );
 
-    commands.command('swagger:path <name>', 'Create a swagger path file', undefined, (argv: Arguments) => {
-        const template = new SwaggerPathTemplate(<string>argv.name);
-        template.generate();
+    commands.command(
+        'swagger:path <name>',
+        'Create a swagger path file',
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        () => {},
+        (argv: Arguments) => {
+            const template = new SwaggerPathTemplate(<string>argv.name);
+            template.generate();
 
-        console.log('Swagger path successfully created');
-    });
+            console.log('Swagger path successfully created');
+        },
+    );
 
     commands.strictCommands();
     commands.argv;
