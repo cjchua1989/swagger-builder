@@ -22,11 +22,7 @@ export class SwaggerResponseTemplate {
     }
 
     generate(): void {
-        if (existsSync(`./docs/swagger/definitions/${this.className}.ts`))
-            throw new Error('Swagger Definition already existed');
-        writeFileSync(
-            `./docs/swagger/definitions/${this.className}.ts`,
-            content.trim().replace(/<class_name>/g, this.className),
-        );
+        if (existsSync(`./definitions/${this.className}.ts`)) throw new Error('Swagger Definition already existed');
+        writeFileSync(`./definitions/${this.className}.ts`, content.trim().replace(/<class_name>/g, this.className));
     }
 }

@@ -21,10 +21,10 @@ export class SwaggerRequestTemplate {
     }
 
     generate(): void {
-        if (existsSync(`./docs/swagger/definitions/${this.className}.ts`))
+        if (existsSync(`./definitions/${this.className}.ts`))
             throw new Error('Swagger Definition already existed');
         writeFileSync(
-            `./docs/swagger/definitions/${this.className}.ts`,
+            `./definitions/${this.className}.ts`,
             content.trim().replace(/<class_name>/g, this.className),
         );
     }

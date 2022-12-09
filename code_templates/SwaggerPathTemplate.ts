@@ -59,7 +59,7 @@ export class SwaggerPathTemplate {
     }
 
     generate(): void {
-        if (existsSync(`./docs/swagger/paths/${this.className}.ts`)) throw new Error('Swagger path already existed');
-        writeFileSync(`./docs/swagger/paths/${this.className}.ts`, content.trim());
+        if (existsSync(`./paths/${this.className}.ts`)) throw new Error('Swagger path already existed');
+        writeFileSync(`./paths/${this.className}.ts`, content.trim());
     }
 }
