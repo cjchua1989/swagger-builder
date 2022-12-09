@@ -1,0 +1,29 @@
+{
+  "name": "<Project Name>",
+  "description": "<Project Description>",
+  "version": "1.0.0",
+
+  "contact": {
+    "name": "<Developer Name>",
+    "email": "<Developer Email>"
+  },
+
+  "development": "http://localhost/estore/v2/",
+  "tags": [
+    {
+      "name": "PUBLIC",
+      "description": "Publicly accessible APIs"
+    },
+    {
+      "name": "AUTHENTICATED",
+      "description": "Only authenticated user can access"
+    }
+  ],
+  "security_schemes": {
+    "authenticated": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    }
+  }
+}
